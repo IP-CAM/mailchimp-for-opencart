@@ -10,18 +10,12 @@ class ControllerExtensionModuleWocmailchimp extends Controller {
 	private $oc_extension				= '';
 	
 	public function index() { 
-		//	$this->load->model('extension/module/' . $this->extension);
-	
-		//Check Install
-		//	$this->{'model_module_' . $this->extension}->createSchema();
 		 $this->load->language('extension/module/wocmailchimp'); 
 		 $this->load->model('setting/setting'); 
 
 		//Set title from language file
 		$this->document->setTitle($this->language->get('heading_title'));
 		
-		//Load settings model
-		// $this->load->model('setting/setting');
 		$data = array();
 		
 		//Save settings
@@ -124,23 +118,11 @@ class ControllerExtensionModuleWocmailchimp extends Controller {
 		$this->response->setOutput($this->load->view('extension/module/wocmailchimp.tpl', $data));
 	}
 
-	/*
-	public function install() {
-    $this->load->model("extension/module/wocmailchimp");
-	$this->model_module_wocmailchimp->createSchema();
-   }
-   */
-
     public function uninstall() {
    	$this->load->model('setting/setting');
 	$this->model_setting_setting->deleteSetting('wocmailchimp');
    }
 
-	/*
-	 * 
-	 * Check that user actions are authorized
-	 * 
-	 */
 	private function validate() {
 		if (!$this->user->hasPermission('modify', 'extension/module/wocmailchimp')) {
 			$this->error['warning'] = $this->language->get('error_permission');
@@ -152,7 +134,6 @@ class ControllerExtensionModuleWocmailchimp extends Controller {
 			return FALSE;
 		}	
 	}
-
 
 }
 ?>

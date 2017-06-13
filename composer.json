@@ -1,4 +1,15 @@
 {
+    "name": "workingoncode/mailchimp",
+    "description": "Opencart Mailchimp integration extension",
+    "keywords": ["opencart", "extension"],
+    "license": "MIT",
+    "type": "extension",
+    "authors": [{
+        "name": "Adam Smith",
+        "email": "adski@workingoncode.com",
+        "homepage": "https://workingoncode.com",
+        "role": "Developer"
+    }],
     "require": {
         "drewm/mailchimp-api": "^2.4"
     }
